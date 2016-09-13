@@ -1,0 +1,11 @@
+The project name is '${name}'
+The Pre-defined param 1 value is '${hdd.inner.pom.param}'
+The Pre-defined param 2 value is '${hdd.outer.pom.param}'
+
+* Including:
+- name: The param, which is containing the maven project's name, is specified in POM file.
+- hdd.inner.pom.param: The param, which contains a given value, is specified in POM file.
+
+* Notes:
+- Calling "mvn resources:resources" then a clone of file "hello.txt" will be generated in the target folder.
+Or calling "mvn resources:resources -Dname='world'".

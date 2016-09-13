@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>hdd.example</groupId>
+    <artifactId>resources-one</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <name>HieuDang Resources Plugin Practice Project</name>
+
+    <!-- Pre-defined parameters -->
+    <properties>
+        <hdd.inner.pom.param>Testing 1</hdd.inner.pom.param>
+    </properties>
+
+    <build>
+        <!-- Handling the files in the resources folder -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- If true, then the resource files contain each parameter (${...}) will show each corresponding value
+                that specified in the POM or the filtering files
+
+                For example: hello.txt -->
+                <filtering>true</filtering>
+
+                <!-- Only copy the txt files from resources to target -->
+                <includes>
+                    <include>**/*.txt</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <!-- Handling the files where contain the key-pair values as library -->
+        <filters>
+            <filter>src/main/resources/hdd-filtering-param.properties</filter>
+        </filters>
+    </build>
+
+</project>
